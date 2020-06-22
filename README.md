@@ -26,6 +26,7 @@ Your app should now be running on http://localhost:5000.
 Now try the following request in your browser: http://localhost:5000/api?q=Who%20wrote%20Romeo%20and%20Juliet?
 This should call the code in `QueryProcessor.java`.
 
+
 ## Run the unit tests
 
 The skeleton app comes with a small set of unit tests (see the file `QueryProcessorTest`), which you can add to as you 
@@ -36,3 +37,28 @@ $ cd skeleton-java-app
 $ mvn test
 ```
 
+
+## Enabling Travis CI
+
+Just `Add Respository` on the left, find your new repository a click the slider to enable.
+
+
+## Link Heroku
+
+1. Add generated Heroku Git remote to your local Git repository
+
+    This is adding a Git `remote` to your local repository so that you can run `git push heroku master` to deploy it manually.
+
+    Running the following on its own doesn't work (as you won't have credentials setup)
+
+    ```
+    git remote add heroku https://git.heroku.com/robbie-spike-horse-bucket.git
+    ```
+    
+    Use the Heroku CLI instead which asks for your credentials and logs you in somehow (as well as adding the remote above)
+    
+    ```
+    heroku git:remote -a robbie-spike-horse-bucket
+    ```
+    
+    Test at [https://robbie-spike-horse-bucket.herokuapp.com](https://robbie-spike-horse-bucket.herokuapp.com/api?q=romeo%20and%20juliet)
