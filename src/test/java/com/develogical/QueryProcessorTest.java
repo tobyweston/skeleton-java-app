@@ -2,13 +2,15 @@ package com.develogical;
 
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class QueryProcessorTest {
 
-  QueryProcessor queryProcessor = new QueryProcessor();
+  private final QueryProcessor queryProcessor = new QueryProcessor();
 
   @Test
   public void knowsWhoWroteRomeoAndJuliet() throws Exception {
@@ -23,5 +25,10 @@ public class QueryProcessorTest {
   @Test
   public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
     assertThat(queryProcessor.process("test"), is(""));
+  }
+  
+  @Test(expected = IOException.class)
+  public void handlesIncompleteQueryString() throws Exception {
+    queryProcessor.process(null);
   }
 }
