@@ -62,3 +62,10 @@ Just `Add Respository` on the left, find your new repository a click the slider 
     ```
     
     Test at [https://robbie-spike-horse-bucket.herokuapp.com](https://robbie-spike-horse-bucket.herokuapp.com/api?q=romeo%20and%20juliet)
+    
+2. Deploy automatically on push
+
+    1. Run `heroku auth:token` to generate an Heroku authorisation token. 
+    1. You would encrypt this value with the `travis` command but if you don't have the Travis CLI installed, use [this site](http://rkh.github.io/travis-encrypt/public/index.html) (use something like `tobyweston/skeleton-java-app` for the repository field)
+    1. Create a `deploy` section to your `travis.yml` (see the [Heroku docs](https://docs.travis-ci.com/user/deployment/heroku/))
+    1. Add the encrypted value to the `deply` section of your `travis.yml`.
