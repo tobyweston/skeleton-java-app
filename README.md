@@ -67,5 +67,23 @@ Just `Add Respository` on the left, find your new repository a click the slider 
 
     1. Run `heroku auth:token` to generate an Heroku authorisation token. 
     1. You would encrypt this value with the `travis` command but if you don't have the Travis CLI installed, use [this site](http://rkh.github.io/travis-encrypt/public/index.html) (use something like `tobyweston/skeleton-java-app` for the repository field)
-    1. Create a `deploy` section to your `travis.yml` (see the [Heroku docs](https://docs.travis-ci.com/user/deployment/heroku/))
+    1. Create a `deploy` section to your `travis.yml` (see the [Travis docs](https://docs.travis-ci.com/user/deployment/heroku/))
     1. Add the encrypted value to the `deply` section of your `travis.yml`.
+    1. Make a change and push, check the travis log to see if it deploys.
+    
+NB. You will likely need to add the `app` value if your Github repo's name doesn't match the Heroku app. 
+
+You're `travis.yml` should look something like this.
+
+```
+language: java
+jdk:
+- openjdk8
+script: mvn clean verify
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: EPYf4T4U9WfJzHi4/CVp4Eom3PXark9x5fbQ23DGw/bjGxpnqMbqv8=
+  app: robbie-spike-horse-bucket
+```
