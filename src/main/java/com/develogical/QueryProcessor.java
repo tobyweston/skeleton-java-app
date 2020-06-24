@@ -12,7 +12,7 @@ public class QueryProcessor {
         if (query == null) {
             throw new IOException("No query was supplied, perhaps no query parameter was supplied on the URI (q= instead of q=param)");
         }
-        cache.add(query);
+        cache.add(query.substring(9));
         if (query.toLowerCase().contains("romeo and juliet")) {
             return "William Shakespeare";
         }

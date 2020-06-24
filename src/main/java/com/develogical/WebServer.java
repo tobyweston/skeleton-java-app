@@ -47,7 +47,7 @@ public class WebServer {
       StringBuilder builder = new StringBuilder();
       QueryProcessor.cache.forEach(str -> {
         builder.append("<p>");
-        builder.append(str.substring(8));
+        builder.append(str);
         builder.append("</p>");
       });
       PrintWriter writer = resp.getWriter();
