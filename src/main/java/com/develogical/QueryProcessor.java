@@ -1,11 +1,6 @@
 package com.develogical;
 
-import simplehttp.HttpClients;
-import simplehttp.HttpResponse;
-import simplehttp.Url;
-
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,9 +25,6 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("which city is the Eiffel tower in"))
 			return "Paris";
 
-		String question = query.substring(query.indexOf('=') + 1) ;
-		String url = "https://mysterious-reaches-24898.herokuapp.com/api/?q=" + question;
-		HttpResponse response = HttpClients.anApacheClient().get(Url.url(url));
-		return response.getContent().asString();
+		return new Forwarder(query, "https://mysterious-reaches-24898.herokuapp.com/api").forward();
 	}
 }
