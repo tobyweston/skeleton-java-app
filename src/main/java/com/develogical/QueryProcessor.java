@@ -17,6 +17,8 @@ public class QueryProcessor {
             return "William Shakespeare";
         if (query.toLowerCase().contains("what is your name"))
 			return "Toby";
+        if (query.toLowerCase().contains("what is 11 plus 18"))
+			return "29";
         return "Unknown question";
     }
 }
