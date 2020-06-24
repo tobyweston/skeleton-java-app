@@ -46,9 +46,9 @@ public class WebServer {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       StringBuilder builder = new StringBuilder();
-      QueryProcessor.cache.forEach((query, id) -> {
+      QueryProcessor.cache.forEach(query -> {
           builder.append("<p>");
-          builder.append(query + "  " + id);
+          builder.append(query);
           builder.append("</p>");
       });
       PrintWriter writer = resp.getWriter();
