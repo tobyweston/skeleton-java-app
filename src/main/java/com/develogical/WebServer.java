@@ -45,7 +45,7 @@ public class WebServer {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       StringBuilder builder = new StringBuilder();
       QueryProcessor.cache.forEach(builder::append);
-      resp.getWriter().println(builder.toString());
+      resp.getWriter().println(builder.toString() + "\n");
     }
   }
 
