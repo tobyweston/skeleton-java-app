@@ -30,7 +30,7 @@ public class QueryProcessor {
 			new LargestNumber(query).is();
 		}
 		if (query.toLowerCase().contains("which city is the Eiffel tower in"))
-			return "Paris";
+			return "Paris"; 
 
 		return new Forwarder(query, forwardUrl).forward();
 	}
