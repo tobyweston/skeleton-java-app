@@ -22,6 +22,8 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
 			new LargestNumber(query).is();
         }
+        if (query.toLowerCase().contains("which city is the Eiffel tower in"))
+            return "Paris";
         return "Unknown question";
     }
 }

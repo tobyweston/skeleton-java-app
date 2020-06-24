@@ -23,9 +23,9 @@ public class LargestNumberTest {
 	
 	@Test
 	public void anotherExample() {
-		String query = "12345678: which of the following numbers is the largest: 238, 99, 233, 61";
+		String query = "2c516d00: which of the following numbers is the largest: 74, 222, 55, 657";
 		LargestNumber largestNumber = new LargestNumber(query);
-		assertThat(largestNumber.is(), is("238"));
+		assertThat(largestNumber.is(), is("657"));
 	}
 	
 //	@Test
