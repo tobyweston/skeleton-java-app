@@ -1,13 +1,6 @@
 package com.develogical;
 
 import org.junit.Test;
-import simplehttp.HttpClients;
-import simplehttp.HttpResponse;
-import simplehttp.Url;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.UUID;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
