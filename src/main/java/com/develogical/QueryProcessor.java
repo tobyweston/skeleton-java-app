@@ -26,9 +26,9 @@ public class QueryProcessor {
 			return "Toby";
 		if (query.toLowerCase().contains("what is 11 plus 18"))
 			return "29";
-		if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
-			new LargestNumber(query).is();
-		}
+//		if (query.toLowerCase().contains("which of the following numbers is the largest: ")) {
+//			new LargestNumber(query).is();
+//		}
 		if (query.toLowerCase().contains("which city is the Eiffel tower in"))
 			return "Paris"; 
 
