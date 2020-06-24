@@ -31,7 +31,7 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("which city is the Eiffel tower in"))
 			return "Paris";
 //		throw new RuntimeException("slow down");
-//		return new Forwarder(query, forwardUrl).forward();
-		return "";
+		return new Forwarder(query, forwardUrl).forward();
+//		return "";
 	}
 }
