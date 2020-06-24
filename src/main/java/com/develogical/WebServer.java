@@ -4,6 +4,7 @@ import com.develogical.web.ApiResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
 import javax.servlet.Servlet;
@@ -45,10 +46,10 @@ public class WebServer {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       StringBuilder builder = new StringBuilder();
-      QueryProcessor.cache.forEach(str -> {
-        builder.append("<p>");
-        builder.append(str);
-        builder.append("</p>");
+      QueryProcessor.cache.forEach((query, id) -> {
+          builder.append("<p>");
+          builder.append(query + "  " + id);
+          builder.append("</p>");
       });
       PrintWriter writer = resp.getWriter();
       
