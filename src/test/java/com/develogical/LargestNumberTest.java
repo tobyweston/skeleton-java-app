@@ -16,14 +16,14 @@ public class LargestNumberTest {
 	
 	@Test
 	public void something() {
-		String query = "12345678: which of the following numbers is the largest: 668, 31, 76, 421";
+		String query = "which of the following numbers is the largest: 668, 31, 76, 421";
 		LargestNumber largestNumber = new LargestNumber(query);
 		assertThat(largestNumber.is(), is("668"));
 	}
 	
 	@Test
 	public void anotherExample() {
-		String query = "2c516d00: which of the following numbers is the largest: 74, 222, 55, 657";
+		String query = "which of the following numbers is the largest: 74, 222, 55, 657";
 		LargestNumber largestNumber = new LargestNumber(query);
 		assertThat(largestNumber.is(), is("657"));
 	}
