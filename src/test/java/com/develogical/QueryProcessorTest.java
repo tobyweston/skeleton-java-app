@@ -24,7 +24,7 @@ public class QueryProcessorTest {
 
   @Test
   public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
-    assertThat(queryProcessor.process("test"), is("Unknown question"));
+    assertThat(queryProcessor.process("testtesttesttest"), is("Unknown question"));
   }
   
   @Test(expected = IOException.class)
