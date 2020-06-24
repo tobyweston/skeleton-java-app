@@ -3,6 +3,8 @@ package com.develogical;
 import com.develogical.web.ApiResponse;
 
 import java.io.IOException;
+import java.util.function.Function;
+import java.util.stream.Stream;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +26,7 @@ public class WebServer {
     ServletHandler handler = new ServletHandler();
     handler.addServletWithMapping(new ServletHolder(new RootPage()), "/*");
     handler.addServletWithMapping(new ServletHolder(new Api()), "/api/*");
+    handler.addServletWithMapping(new ServletHolder(new CacheDisplay()), "/cache/*");
     server.setHandler(handler);
 
     server.start();
@@ -34,6 +37,15 @@ public class WebServer {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       String query = req.getParameter("q");
       new ApiResponse(new QueryProcessor().process(query)).writeTo(resp);
+    }
+  }
+
+  static class CacheDisplay extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      StringBuilder builder = new StringBuilder();
+      QueryProcessor.cache.forEach(builder::append);
+      resp.getWriter().println(builder.toString());
     }
   }
 
