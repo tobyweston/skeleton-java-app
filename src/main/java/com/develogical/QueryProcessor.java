@@ -8,7 +8,7 @@ public class QueryProcessor {
 
 	public static final Set<String> cache = new HashSet<>();
 	
-	private final String forwardUrl = "https://mysterious-reaches-24898.herokuapp.com/api";
+	private final String forwardUrl = "http://johnny-app-66.herokuapp.com/api";
 
 	public String process(String query) throws IOException {
 		if (query == null) {
@@ -31,7 +31,7 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("which city is the Eiffel tower in"))
 			return "Paris";
 		
-//		return new Forwarder(query, forwardUrl).forward();
-		return "";
+		return new Forwarder(query, forwardUrl).forward();
+//		return "";
 	}
 }
