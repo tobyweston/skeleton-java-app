@@ -14,7 +14,7 @@ public class LargestNumber {
 	}
 
 	public String is() {
-		String lead = "which of the following numbers is the largest: ";
+		String lead = "65767530: which of the following numbers is the largest: ";
 		String[] numbers = query.substring(lead.length()).split(",");
 		List<Integer> sorted = Arrays.stream(numbers)
 			.map(s -> s.replaceAll(" ", ""))

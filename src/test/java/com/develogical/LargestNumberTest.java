@@ -9,14 +9,14 @@ public class LargestNumberTest {
 	
 	@Test
 	public void something() {
-		String query = "which of the following numbers is the largest: 668, 31, 76, 421";
+		String query = "65767530: which of the following numbers is the largest: 668, 31, 76, 421";
 		LargestNumber largestNumber = new LargestNumber(query);
 		assertThat(largestNumber.is(), is("668"));
 	}
 	
 	@Test
 	public void anotherExample() {
-		String query = "which of the following numbers is the largest: 74, 222, 55, 657";
+		String query = "65767530: which of the following numbers is the largest: 74, 222, 55, 657";
 		LargestNumber largestNumber = new LargestNumber(query);
 		assertThat(largestNumber.is(), is("657"));
 	}
